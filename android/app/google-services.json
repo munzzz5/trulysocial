@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "327538148956",
+    "project_id": "truly-social-project",
+    "storage_bucket": "truly-social-project.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:327538148956:android:66417c799b219b96508899",
+        "android_client_info": {
+          "package_name": "com.example.trulysocial"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "327538148956-2a3ub37uath9krjugkl0at2rp9cr7n1l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDeBIEoxzWgHf1SPYHQovAU-9rimdOatx4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "327538148956-2a3ub37uath9krjugkl0at2rp9cr7n1l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
