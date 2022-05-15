@@ -53,7 +53,7 @@ class FirebaseCloudStorage {
     );
   }
 
-  Future<Iterable<SocialWork>> getSocialWorks() async {
+  Future<Iterable<SocialWork>> getAllSocialWorks() async {
     try {
       return await socialWorks.get().then((allSocialWorks) => allSocialWorks
           .docs
@@ -61,6 +61,17 @@ class FirebaseCloudStorage {
     } catch (e) {
       throw CouldNotGetAllSocialWorkException();
       // print(e);
+    }
+  }
+
+  Future<SocialWork> getSocialWorkFromId({required String socialId}) async {
+    try {
+      final refDoc = socialWorks.doc(socialId);
+      return await refDoc
+          .get()
+          .then((result) => SocialWork.fromSnapshot(result));
+    } catch (e) {
+      throw CouldNotGetFromIdSocialWorkException();
     }
   }
 
@@ -113,6 +124,16 @@ class FirebaseCloudStorage {
       return fetchedUser.first;
     } catch (e) {
       throw CouldNotGetCloudUserException();
+    }
+  }
+
+  Future<void> updateUser({required CloudUser user}) async {
+    try {
+      final fetchedUser =
+          await socialUser.where(firebaseUserIdField, isEqualTo: user.id).get();
+      socialUser.doc(fetchedUser.docs.first.id).update(user.toMap());
+    } catch (e) {
+      throw CouldNotUpdateCloudUserException();
     }
   }
 }

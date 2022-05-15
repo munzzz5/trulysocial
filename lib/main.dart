@@ -4,6 +4,7 @@ import 'package:trulysocial/utils/constants/routes.dart';
 import 'package:trulysocial/views/Home/home_page.dart';
 import 'package:trulysocial/views/login_view.dart';
 import 'package:trulysocial/views/register_view.dart';
+import 'package:trulysocial/views/socialWork/create_update_social_work.dart';
 import 'package:trulysocial/views/verify_email_view.dart';
 
 void main() {
@@ -25,6 +26,7 @@ class MyApp extends StatelessWidget {
         registerRoute: (context) => const RegisterView(),
         loginRoute: (context) => const LoginView(),
         homePageRoute: (context) => const HomePage(),
+        createSocialWorkRoute: (context) => const CreateSocialWorkView(),
       },
       home: const InitialPage(),
     );
